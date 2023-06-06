@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_template/values/k_styles.dart';
 import '/src/utils/extensions.dart';
 
 import '../../../values/k_colors.dart';
@@ -100,30 +101,24 @@ class AlertPopup {
 
   _title() {
     return Material(
-        type: MaterialType.transparency,
-        child: Text(
-          title.isNotEmpty ? title : "",
-          softWrap: true,
-          style: const TextStyle(
-            color: KGray,
-            fontWeight: FontWeight.w400,
-            fontSize: KFontSizeXLarge45,
-          ),
-        ));
+      type: MaterialType.transparency,
+      child: Text(
+        title.isNotEmpty ? title : "",
+        softWrap: true,
+        style: kGrayW400Size45(),
+      ),
+    );
   }
 
   _description() {
     return Material(
-        type: MaterialType.transparency,
-        child: Text(
-          description.isNotEmpty ? description : "",
-          softWrap: true,
-          style: const TextStyle(
-            color: KGray_L1,
-            fontWeight: FontWeight.w400,
-            fontSize: KFontSizeXLarge45,
-          ),
-        ));
+      type: MaterialType.transparency,
+      child: Text(
+        description.isNotEmpty ? description : "",
+        softWrap: true,
+        style: kGrayL1W400Size45(),
+      ),
+    );
   }
 
   _buttons() {
@@ -169,11 +164,7 @@ class AlertPopup {
             child: Text(
               labelButtonAccept.isNotEmpty ? labelButtonAccept : "",
               textAlign: TextAlign.center,
-              style: const TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-                fontSize: KFontSizeLarge40,
-              ),
+              style: kWhiteW700Size40(),
             ),
           ),
         ),
@@ -202,11 +193,7 @@ class AlertPopup {
             child: Text(
               labelOptionalButton ?? '',
               textAlign: TextAlign.center,
-              style: const TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-                fontSize: KFontSizeLarge40,
-              ),
+              style: kWhiteW700Size40(),
             ),
           ),
         ),

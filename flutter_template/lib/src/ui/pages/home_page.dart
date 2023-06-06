@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_template/values/k_styles.dart';
 import 'package:mvc_pattern/mvc_pattern.dart';
 import '../../managers/translate_manager.dart';
 import '../../utils/page_args.dart';
@@ -9,7 +10,7 @@ class HomePage extends StatefulWidget {
   const HomePage(this.args, {Key? key}) : super(key: key);
 
   @override
-  HomePagePageState createState() =>  HomePagePageState();
+  HomePagePageState createState() => HomePagePageState();
 }
 
 class HomePagePageState extends StateMVC<HomePage> {
@@ -34,7 +35,7 @@ class HomePagePageState extends StateMVC<HomePage> {
           body: Center(
             child: Text(
               TranslateManager().texts().test,
-              style: const TextStyle(color: Colors.black),
+              style: kBlack(),
             ),
           )),
     );

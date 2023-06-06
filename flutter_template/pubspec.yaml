@@ -28,20 +28,19 @@ dependencies:
 dev_dependencies:
   flutter_launcher_icons: ^0.13.1
   flutter_lints: ^2.0.1
+  change_app_package_name: ^1.1.0
   flutter_test:
     sdk: flutter
 
 flutter_icons:
-# Add icon in this folder and complete the path. Then run: flutter pub get 
-# Finally run: flutter pub run flutter_launcher_icons
   # Global
-  image_path: "images/app_icon/"
+  image_path: "images/app_icon/icon.png"
   # Android
   android: "launcher_icon"
   adaptive_icon_background: "#FFFFFF"
-  #adaptive_icon_foreground: "images/app_icon/"
+  adaptive_icon_foreground: "images/app_icon/icon_transparent_background.png"
   # iOS
-  ios: true
+  ios: false
   remove_alpha_ios: true
 
 
