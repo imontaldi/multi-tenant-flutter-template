@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_template/src/managers/config_manager.dart';
 import 'package:mvc_pattern/mvc_pattern.dart';
 import '../../managers/translate_manager.dart';
 import '../../utils/page_args.dart';
@@ -9,7 +10,7 @@ class HomePage extends StatefulWidget {
   const HomePage(this.args, {Key? key}) : super(key: key);
 
   @override
-  HomePagePageState createState() =>  HomePagePageState();
+  HomePagePageState createState() => HomePagePageState();
 }
 
 class HomePagePageState extends StateMVC<HomePage> {
@@ -30,13 +31,30 @@ class HomePagePageState extends StateMVC<HomePage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-          backgroundColor: Colors.white,
-          body: Center(
-            child: Text(
-              TranslateManager().texts().test,
-              style: const TextStyle(color: Colors.black),
-            ),
-          )),
+        backgroundColor: Colors.white,
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                TranslateManager().texts().test,
+                style: const TextStyle(color: Colors.black),
+              ),
+              Text(
+                "Prueba",
+                style: TextStyle(color: ConfigManager().colors.KPrimary),
+              ),
+              Text(
+                ConfigManager().api.KApiUrl,
+              ),
+              Text(
+                ConfigManager().api.KApiLogin,
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

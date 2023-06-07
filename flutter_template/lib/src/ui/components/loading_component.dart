@@ -1,8 +1,7 @@
 // ignore_for_file: unnecessary_null_comparison, unnecessary_type_check
 
 import 'package:flutter/material.dart';
-
-import '../../../values/k_colors.dart';
+import 'package:flutter_template/src/managers/config_manager.dart';
 
 class LoadingComponent extends StatefulWidget {
   final Color color;
@@ -17,9 +16,9 @@ class LoadingComponent extends StatefulWidget {
     this.itemBuilder,
     this.duration = const Duration(milliseconds: 2000),
   })  : assert(
-  !(itemBuilder is IndexedWidgetBuilder && color is Color) &&
-      !(itemBuilder == null && color == null),
-  'You should specify either a itemBuilder or a color'),
+            !(itemBuilder is IndexedWidgetBuilder && color is Color) &&
+                !(itemBuilder == null && color == null),
+            'You should specify either a itemBuilder or a color'),
         assert(size != null),
         super(key: key);
 
@@ -82,22 +81,23 @@ class SpinKitChasingDotsState extends State<LoadingComponent>
         child: widget.itemBuilder != null
             ? widget.itemBuilder!(context, index)
             : DecoratedBox(
-            decoration:
-            BoxDecoration(shape: BoxShape.circle, color: widget.color)),
+                decoration:
+                    BoxDecoration(shape: BoxShape.circle, color: widget.color)),
       ),
     );
   }
 }
 
-Widget loadingComponent(bool isVisible, {Color color = KPrimary, double size = 50, EdgeInsetsGeometry? padding}) {
+Widget loadingComponent(bool isVisible,
+    {Color? color, double size = 50, EdgeInsetsGeometry? padding}) {
   return Visibility(
     visible: isVisible,
     child: Container(
       padding: padding ?? const EdgeInsets.all(0),
-      color:  Colors.transparent,
+      color: Colors.transparent,
       alignment: Alignment.center,
       child: LoadingComponent(
-        color: color,
+        color: color ?? ConfigManager().colors.KPrimary,
         size: size,
       ),
     ),

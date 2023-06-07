@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_template/src/managers/config_manager.dart';
 import '/src/utils/extensions.dart';
 
 import '../../../values/k_colors.dart';
@@ -46,7 +47,7 @@ class AlertPopup {
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: [
-                KPrimary.withOpacity(backgroundOpacity),
+                ConfigManager().colors.KPrimary.withOpacity(backgroundOpacity),
                 KPrimary_L3.withOpacity(backgroundOpacity)
               ])),
         ),

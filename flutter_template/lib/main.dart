@@ -7,13 +7,12 @@ import 'package:provider/provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'src/managers/page_manager.dart';
 import 'src/providers/app_provider.dart';
-import 'values/k_colors.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-    statusBarColor: KPrimary,
+    statusBarColor: Color(0xFFEB7743),
   ));
   runApp(
     MultiProvider(
@@ -29,16 +28,15 @@ class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
   static void setLocale(BuildContext context, Locale newLocale) async {
-    _MyHomePageState? state =
-        context.findAncestorStateOfType<_MyHomePageState>();
+    MyHomePageState? state = context.findAncestorStateOfType<MyHomePageState>();
     state!.changeLanguage(newLocale);
   }
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  MyHomePageState createState() => MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyApp> {
+class MyHomePageState extends State<MyApp> {
   late Locale _locale = const Locale("es", '');
 
   @override
@@ -90,6 +88,6 @@ class _MyHomePageState extends State<MyApp> {
   }
 
   _initPage() {
-    return InitPage(null);
+    return const InitPage(null);
   }
 }

@@ -1,3 +1,4 @@
+import 'package:flutter_template/src/managers/config_manager.dart';
 import 'package:flutter_template/src/ui/pages/home_page.dart';
 import 'package:mvc_pattern/mvc_pattern.dart';
 import '../../interfaces/i_view_controller.dart';
@@ -26,12 +27,13 @@ class InitPageController extends ControllerMVC implements IViewController {
   disposePage() {}
 
   init() async {
+    await ConfigManager().init();
     await DataManager().init();
     await AppProvider().init();
   }
 
   goInitialPage() {
     //TODO: Add logic for Login or Home
-    return HomePage(null);
+    return const HomePage(null);
   }
 }
