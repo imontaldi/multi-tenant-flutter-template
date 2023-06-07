@@ -1,7 +1,4 @@
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, constant_identifier_names
 
-import 'package:flutter_template/src/managers/config_manager.dart';
-
-class KIcons {
-  String KIconExamplePath = ConfigManager().kJson["icons"]["KIconExamplePath"];
-}
+const String KIconExamplePath =
+    String.fromEnvironment("icons.KIconExamplePath");

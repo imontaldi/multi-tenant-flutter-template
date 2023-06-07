@@ -1,14 +1,10 @@
 // ignore_for_file: constant_identifier_names, non_constant_identifier_names
 
 import 'package:flutter/material.dart';
-import 'package:flutter_template/src/managers/config_manager.dart';
 
-class KColors {
-  Color KPrimary =
-      Color(int.parse(ConfigManager().kJson["colors"]["KPrimary"]));
-}
+const Color KPrimary = Color(int.fromEnvironment("colors.KPrimary"));
 
-const Color KPrimary = Color(0xFFEB7743);
+// const Color KPrimary = Color(0xFFEB7743);
 const Color KPrimary_T1 = Color(0x40A62123);
 const Color KPrimary_D1 = Color(0xFFA62123);
 const Color KPrimary_L1 = Color(0xFFE12E31);

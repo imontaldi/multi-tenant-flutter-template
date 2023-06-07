@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_template/src/managers/config_manager.dart';
 import '/src/utils/extensions.dart';
 import '../../../values/k_colors.dart';
 import '/values/k_values.dart';
@@ -250,7 +249,7 @@ class InformationAlertPopup {
                 "images/icon_close.png",
                 fit: BoxFit.cover,
                 alignment: Alignment.center,
-                color: ConfigManager().colors.KPrimary,
+                color: KPrimary,
                 height: 20,
               ),
             ),
@@ -276,7 +275,7 @@ class InformationAlertPopup {
           },
           style: TextButton.styleFrom(
             padding: const EdgeInsets.all(0),
-            backgroundColor: ConfigManager().colors.KPrimary,
+            backgroundColor: KPrimary,
             textStyle: const TextStyle(fontSize: 20),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20),

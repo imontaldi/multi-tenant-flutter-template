@@ -1,12 +1,6 @@
 {
-    "colors": {
-        "KPrimary": "0xFFEB7743"
-    },
-    "api": {
-        "KApiUrl": "https://api2.hoteltogo.staging.silentiumapps.com/api/",
-        "KApiLogin": "auth/login"
-    },
-    "icons": {
-        "KIconExamplePath": "images/dash.png"
-    }
+    "api.KApiLogin": "auth/login",
+    "api.KApiUrl": "https://api2.hoteltogo.staging.silentiumapps.com/api/",
+    "colors.KPrimary": 4293621571,
+    "icons.KIconExamplePath": "images/dash.png"
 }
