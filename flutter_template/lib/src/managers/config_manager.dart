@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/services.dart';
 import 'package:flutter_template/values/k_api.dart';
 import 'package:flutter_template/values/k_colors.dart';
+import 'package:flutter_template/values/k_icons.dart';
 
 class ConfigManager {
   static final ConfigManager _instance = ConfigManager._constructor();
@@ -22,10 +23,14 @@ class ConfigManager {
   late KApi _api;
   KApi get api => _api;
 
+  late KIcons _icons;
+  KIcons get icons => _icons;
+
   init() async {
     final String response = await rootBundle.loadString('config.json');
     _configJson = await json.decode(response);
     _colors = KColors();
     _api = KApi();
+    _icons = KIcons();
   }
 }

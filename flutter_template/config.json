@@ -5,5 +5,8 @@
     "api": {
         "KApiUrl": "https://api2.hoteltogo.staging.silentiumapps.com/api/",
         "KApiLogin": "auth/login"
+    },
+    "icons": {
+        "KIconExamplePath": "images/dash.png"
     }
 }

@@ -51,6 +51,7 @@ class HomePagePageState extends StateMVC<HomePage> {
               Text(
                 ConfigManager().api.KApiLogin,
               ),
+              Image.asset(ConfigManager().icons.KIconExamplePath)
             ],
           ),
         ),
