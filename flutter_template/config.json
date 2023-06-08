@@ -2,5 +2,7 @@
     "api.KApiLogin": "auth/login",
     "api.KApiUrl": "https://api2.hoteltogo.staging.silentiumapps.com/api/",
     "colors.KPrimary": 4293621571,
-    "icons.KIconExamplePath": "images/dash.png"
+    "icons.KIconExamplePath": "images/dash.png",
+    "appName": "Caja de Seguros",
+    "APP_NAME": "Caja de Seguros iOS"
 }

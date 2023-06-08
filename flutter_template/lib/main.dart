@@ -67,7 +67,7 @@ class MyHomePageState extends State<MyApp> {
         ),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      title: 'flutter_template',
+      title: const String.fromEnvironment("appName"),
       home: _initPage(),
     );
   }
