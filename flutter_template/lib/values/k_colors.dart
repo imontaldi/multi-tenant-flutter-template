@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 
-const Color KPrimary = Color(int.fromEnvironment("colors.KPrimary"));
+const Color KPrimary = Color(int.fromEnvironment("colors_KPrimary"));
 
 // const Color KPrimary = Color(0xFFEB7743);
 const Color KPrimary_T1 = Color(0x40A62123);
