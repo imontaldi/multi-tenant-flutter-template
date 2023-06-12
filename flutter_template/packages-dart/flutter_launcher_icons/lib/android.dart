@@ -41,6 +41,7 @@ void createDefaultIcons(
   utils.printStatus('Creating default icons Android');
   // TODO(p-mazhnik): support prefixPath
   final String? filePath = config.getImagePathAndroid();
+
   if (filePath == null) {
     throw const InvalidConfigException(errorMissingImagePath);
   }
