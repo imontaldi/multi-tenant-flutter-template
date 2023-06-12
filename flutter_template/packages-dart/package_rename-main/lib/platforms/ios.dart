@@ -1,15 +1,10 @@
 part of package_rename;
 
-void _setIOSConfigurations(dynamic iosConfig) {
+void _setIOSConfigurations(Map<String, dynamic> configJson) {
   try {
-    if (iosConfig == null) return;
-    if (iosConfig is! Map) throw _PackageRenameErrors.invalidIOSConfig;
-
-    final iosConfigMap = Map<String, dynamic>.from(iosConfig);
-
-    _setIOSDisplayName(iosConfigMap[_appNameKey]);
-    _setIOSBundleName(iosConfigMap[_bundleNameKey]);
-    _setIOSPackageName(iosConfigMap[_packageNameKey]);
+    _setIOSDisplayName(configJson['appName']);
+    _setIOSBundleName(configJson['bundleName']);
+    _setIOSPackageName(configJson['packageName']);
   } on _PackageRenameException catch (e) {
     _logger
       ..e('${e.message}ERR Code: ${e.code}')
@@ -19,8 +14,6 @@ void _setIOSConfigurations(dynamic iosConfig) {
       ..w(e.toString())
       ..e('ERR Code: 255')
       ..e('Skipping iOS configuration!!!');
-  } finally {
-    if (iosConfig != null) _logger.w(_majorTaskDoneLine);
   }
 }
 

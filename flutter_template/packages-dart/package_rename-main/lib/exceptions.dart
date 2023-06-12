@@ -43,11 +43,6 @@ class _PackageRenameErrors {
     7,
   );
 
-  static const invalidIOSConfig = _PackageRenameException(
-    _invalidIOSConfigMessage,
-    8,
-  );
-
   static const iosInfoPlistNotFound = _PackageRenameException(
     _iosInfoPlistNotFoundMessage,
     9,
@@ -63,76 +58,6 @@ class _PackageRenameErrors {
     11,
   );
 
-  static const invalidWebConfig = _PackageRenameException(
-    _invalidWebConfigMessage,
-    12,
-  );
-
-  static const webIndexNotFound = _PackageRenameException(
-    _webIndexNotFoundMessage,
-    13,
-  );
-
-  static const invalidDescription = _PackageRenameException(
-    _invalidDescriptionMessage,
-    14,
-  );
-
-  static const invalidLinuxConfig = _PackageRenameException(
-    _invalidLinuxConfigMessage,
-    15,
-  );
-
-  static const linuxCMakeListsNotFound = _PackageRenameException(
-    _linuxCMakeListsNotFoundMessage,
-    16,
-  );
-
-  static const linuxMyApplicationNotFound = _PackageRenameException(
-    _linuxMyApplicationNotFoundMessage,
-    17,
-  );
-
-  static const invalidWindowsConfig = _PackageRenameException(
-    _invalidWindowsConfigMessage,
-    18,
-  );
-
-  static const windowsCMakeListsNotFound = _PackageRenameException(
-    _windowsCMakeListsNotFoundMessage,
-    19,
-  );
-
-  static const windowsMainCppNotFound = _PackageRenameException(
-    _windowsMainCppNotFoundMessage,
-    20,
-  );
-
-  static const windowsRunnerNotFound = _PackageRenameException(
-    _windowsRunnerNotFoundMessage,
-    21,
-  );
-
-  static const invalidOrganization = _PackageRenameException(
-    _invalidOrganizationMessage,
-    22,
-  );
-
-  static const invalidCopyrightNotice = _PackageRenameException(
-    _invalidCopyrightNoticeMessage,
-    23,
-  );
-
-  static const invalidMacOSConfig = _PackageRenameException(
-    _invalidMacOSConfigMessage,
-    24,
-  );
-
-  static const macOSAppInfoNotFound = _PackageRenameException(
-    _macOSAppInfoNotFoundMessage,
-    25,
-  );
-
   static const invalidLanguageType = _PackageRenameException(
     _invalidLanguageTypeMessage,
     26,
@@ -141,16 +66,6 @@ class _PackageRenameErrors {
   static const invalidAndroidLanguageValue = _PackageRenameException(
     _invalidAndroidLangValueMessage,
     27,
-  );
-
-  static const invalidExecutableName = _PackageRenameException(
-    _invalidExecutableNameMessage,
-    28,
-  );
-
-  static const invalidExecutableNameValue = _PackageRenameException(
-    _invalidExecutableNameValueMessage,
-    29,
   );
 
   static const androidOldDirectoryNotFound = _PackageRenameException(
@@ -170,14 +85,4 @@ class _PackageRenameErrors {
 
     return _PackageRenameException(flavorNotFoundMessage, 31);
   }
-
-  static const macOSRunnerXCSchemeNotFound = _PackageRenameException(
-    _macOSRunnerXCSchemeNotFoundMessage,
-    32,
-  );
-
-  static const macOSProjectFileNotFound = _PackageRenameException(
-    _macOSProjectFileNotFoundMessage,
-    33,
-  );
 }

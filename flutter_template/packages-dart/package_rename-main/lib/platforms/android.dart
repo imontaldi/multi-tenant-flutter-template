@@ -1,17 +1,20 @@
 part of package_rename;
 
-void _setAndroidConfigurations(dynamic androidConfig) {
+void _setAndroidConfigurations(
+  dynamic androidConfig,
+  Map<String, dynamic> configJson,
+) {
   try {
     if (androidConfig == null) return;
     if (androidConfig is! Map) throw _PackageRenameErrors.invalidAndroidConfig;
 
     final androidConfigMap = Map<String, dynamic>.from(androidConfig);
 
-    _setAndroidAppName(const String.fromEnvironment('appName'));
-    _setAndroidPackageName(androidConfigMap[_packageNameKey]);
+    _setAndroidAppName(configJson['appName']);
+    _setAndroidPackageName(configJson['packageName']);
     _createNewMainActivity(
       lang: androidConfigMap[_languageKey],
-      packageName: androidConfigMap[_packageNameKey],
+      packageName: configJson['packageName'],
       overrideOldPackage: androidConfigMap[_overrideOldPackageKey],
     );
   } on _PackageRenameException catch (e) {

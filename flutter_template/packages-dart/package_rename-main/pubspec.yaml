@@ -14,5 +14,9 @@ dependencies:
   universal_io: ^2.0.4
   yaml: ^3.1.1
 
+flutter:
+  assets:
+    - ../../config.json
+
 dev_dependencies:
   very_good_analysis: ^5.0.0+1

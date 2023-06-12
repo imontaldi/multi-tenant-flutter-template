@@ -17,7 +17,6 @@ library package_rename;
 import 'dart:convert';
 
 import 'package:args/args.dart';
-import 'package:html/parser.dart' as html;
 import 'package:logger/logger.dart';
 import 'package:universal_io/io.dart';
 import 'package:yaml/yaml.dart' as yaml;
@@ -28,10 +27,6 @@ part 'messages.dart';
 
 part 'platforms/android.dart';
 part 'platforms/ios.dart';
-part 'platforms/web.dart';
-part 'platforms/linux.dart';
-part 'platforms/windows.dart';
-part 'platforms/macos.dart';
 
 final _logger = Logger(
   filter: ProductionFilter(),
@@ -60,7 +55,7 @@ final _logger = Logger(
 /// package_rename_config:
 ///   ...
 /// ```
-void set(List<String> args) {
+Future<void> set(List<String> args) async {
   try {
     _logger.w(_majorTaskDoneLine);
 
@@ -79,12 +74,11 @@ void set(List<String> args) {
 
     final config = _getConfig(flavour: flavour);
 
-    _setAndroidConfigurations(config['android']);
-    _setIOSConfigurations(config['ios']);
-    _setLinuxConfigurations(config['linux']);
-    _setMacOSConfigurations(config['macos']);
-    _setWebConfigurations(config['web']);
-    _setWindowsConfigurations(config['windows']);
+    final configFileContent = await File('config.json').readAsString();
+    final configJson = jsonDecode(configFileContent) as Map<String, dynamic>;
+
+    _setAndroidConfigurations(config['android'], configJson);
+    _setIOSConfigurations(configJson);
 
     _logger.i(_successMessage);
   } on _PackageRenameException catch (e) {
