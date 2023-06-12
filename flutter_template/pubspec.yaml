@@ -26,9 +26,10 @@ dependencies:
   
 
 dev_dependencies:
-  flutter_launcher_icons: ^0.13.1
+  flutter_launcher_icons:
+    path: packages-dart/flutter_launcher_icons
   package_rename:
-    path: packages-dart/package_rename-main
+    path: packages-dart/package_rename
   flutter_lints: ^2.0.1
   flutter_test:
     sdk: flutter
