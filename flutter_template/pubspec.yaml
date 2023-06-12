@@ -26,6 +26,7 @@ dependencies:
   
 
 dev_dependencies:
+  # Run: dart run flutter_launcher_icons
   flutter_launcher_icons:
     path: packages-dart/flutter_launcher_icons
   # Run: dart run package_rename
@@ -34,17 +35,6 @@ dev_dependencies:
   flutter_lints: ^2.0.1
   flutter_test:
     sdk: flutter
-
-flutter_launcher_icons:
-# Run: dart run flutter_launcher_icons
-  # Global
-  image_path: "images/app_icon/icon.png"
-  # Android
-  android: true
-  # iOS
-  ios: true
-  remove_alpha_ios: true
-
 
 flutter:
   generate: true
