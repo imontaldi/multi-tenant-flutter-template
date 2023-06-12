@@ -1,9 +1,6 @@
 import 'dart:io';
 
 import 'package:flutter_launcher_icons/config/config.dart';
-import 'package:flutter_launcher_icons/config/macos_config.dart';
-import 'package:flutter_launcher_icons/config/web_config.dart';
-import 'package:flutter_launcher_icons/config/windows_config.dart';
 import 'package:flutter_launcher_icons/logger.dart';
 
 /// A base class to generate icons
@@ -55,15 +52,6 @@ class IconGeneratorContext {
     required this.prefixPath,
     this.flavor,
   });
-
-  /// Shortcut for `config.webConfig`
-  WebConfig? get webConfig => config.webConfig;
-
-  /// Shortcut for `config.windowsConfig`
-  WindowsConfig? get windowsConfig => config.windowsConfig;
-
-  /// Shortcut for `config.macOSConfig`
-  MacOSConfig? get macOSConfig => config.macOSConfig;
 }
 
 /// Generates Icon for given platforms

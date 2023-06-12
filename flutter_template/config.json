@@ -2,6 +2,7 @@
     "appName": "Caja de Seguros",
     "packageName": "com.siltium.hola",
     "bundleName": "siltium_seguros",
+    "appIcon_image": "images/app_icon/icon.png",
     "api_KApiLogin": "auth/login",
     "api_KApiUrl": "https://api2.hoteltogo.staging.silentiumapps.com/api/",
     "colors_KBlack_T1": "0xFF3F3F3E",

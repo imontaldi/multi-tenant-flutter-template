@@ -49,32 +49,22 @@ void createDefaultIcons(
     return;
   }
   final File androidManifestFile = File(constants.androidManifestFile);
-  if (config.isCustomAndroidFile) {
-    utils.printStatus('Adding a new Android launcher icon');
-    final String iconName = config.android;
-    isAndroidIconNameCorrectFormat(iconName);
-    final String iconPath = '$iconName.png';
-    for (AndroidIconTemplate template in androidIcons) {
-      _saveNewImages(template, image, iconPath, flavor);
-    }
-    overwriteAndroidManifestWithNewLauncherIcon(iconName, androidManifestFile);
-  } else {
-    utils.printStatus(
-      'Overwriting the default Android launcher icon with a new icon',
-    );
-    for (AndroidIconTemplate template in androidIcons) {
-      overwriteExistingIcons(
-        template,
-        image,
-        constants.androidFileName,
-        flavor,
-      );
-    }
-    overwriteAndroidManifestWithNewLauncherIcon(
-      constants.androidDefaultIconName,
-      androidManifestFile,
+
+  utils.printStatus(
+    'Overwriting the default Android launcher icon with a new icon',
+  );
+  for (AndroidIconTemplate template in androidIcons) {
+    overwriteExistingIcons(
+      template,
+      image,
+      constants.androidFileName,
+      flavor,
     );
   }
+  overwriteAndroidManifestWithNewLauncherIcon(
+    constants.androidDefaultIconName,
+    androidManifestFile,
+  );
 }
 
 /// Ensures that the Android icon name is in the correct format
@@ -157,21 +147,13 @@ void createAdaptiveIconMipmapXmlFile(
   Config config,
   String? flavor,
 ) {
-  if (config.isCustomAndroidFile) {
-    File(
-      constants.androidAdaptiveXmlFolder(flavor) + config.android + '.xml',
-    ).create(recursive: true).then((File adaptiveIcon) {
-      adaptiveIcon.writeAsString(xml_template.icLauncherXml);
-    });
-  } else {
-    File(
-      constants.androidAdaptiveXmlFolder(flavor) +
-          constants.androidDefaultIconName +
-          '.xml',
-    ).create(recursive: true).then((File adaptiveIcon) {
-      adaptiveIcon.writeAsString(xml_template.icLauncherXml);
-    });
-  }
+  File(
+    constants.androidAdaptiveXmlFolder(flavor) +
+        constants.androidDefaultIconName +
+        '.xml',
+  ).create(recursive: true).then((File adaptiveIcon) {
+    adaptiveIcon.writeAsString(xml_template.icLauncherXml);
+  });
 }
 
 /// creates adaptive background using png image
@@ -197,23 +179,13 @@ void _createAdaptiveBackgrounds(
     );
   }
 
-  // Creates the xml file required for the adaptive launcher icon
-  // FILE LOCATED HERE:  res/mipmap-anydpi/{icon-name-from-yaml-config}.xml
-  if (config.isCustomAndroidFile) {
-    File(
-      constants.androidAdaptiveXmlFolder(flavor) + config.android + '.xml',
-    ).create(recursive: true).then((File adaptiveIcon) {
-      adaptiveIcon.writeAsString(xml_template.icLauncherDrawableBackgroundXml);
-    });
-  } else {
-    File(
-      constants.androidAdaptiveXmlFolder(flavor) +
-          constants.androidDefaultIconName +
-          '.xml',
-    ).create(recursive: true).then((File adaptiveIcon) {
-      adaptiveIcon.writeAsString(xml_template.icLauncherDrawableBackgroundXml);
-    });
-  }
+  File(
+    constants.androidAdaptiveXmlFolder(flavor) +
+        constants.androidDefaultIconName +
+        '.xml',
+  ).create(recursive: true).then((File adaptiveIcon) {
+    adaptiveIcon.writeAsString(xml_template.icLauncherDrawableBackgroundXml);
+  });
 }
 
 /// Creates a colors.xml file if it was missing from android/app/src/main/res/values/colors.xml

@@ -1,5 +1,6 @@
 // ignore_for_file: public_member_api_docs
 
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:args/args.dart';
@@ -11,9 +12,6 @@ import 'package:flutter_launcher_icons/constants.dart';
 import 'package:flutter_launcher_icons/custom_exceptions.dart';
 import 'package:flutter_launcher_icons/ios.dart' as ios_launcher_icons;
 import 'package:flutter_launcher_icons/logger.dart';
-import 'package:flutter_launcher_icons/macos/macos_icon_generator.dart';
-import 'package:flutter_launcher_icons/web/web_icon_generator.dart';
-import 'package:flutter_launcher_icons/windows/windows_icon_generator.dart';
 import 'package:path/path.dart' as path;
 
 const String fileOption = 'file';
@@ -68,60 +66,34 @@ Future<void> createIconsFromArguments(List<String> arguments) async {
     exit(0);
   }
 
-  // Flavors management
-  final flavors = getFlavors();
-  final hasFlavors = flavors.isNotEmpty;
-
   final String prefixPath = argResults[prefixOption];
 
-  // Create icons
-  if (!hasFlavors) {
-    // Load configs from given file(defaults to ./flutter_launcher_icons.yaml) or from ./pubspec.yaml
+  //Load config file data
+  final configFileContent = await File('config.json').readAsString();
+  final configJson = jsonDecode(configFileContent) as Map<String, dynamic>;
 
-    final flutterLauncherIconsConfigs =
-        loadConfigFileFromArgResults(argResults);
-    if (flutterLauncherIconsConfigs == null) {
-      throw NoConfigFoundException(
-        'No configuration found in $defaultConfigFile or in ${constants.pubspecFilePath}. '
-        'In case file exists in different directory use --file option',
-      );
-    }
-    try {
-      await createIconsFromConfig(
-        flutterLauncherIconsConfigs,
-        logger,
-        prefixPath,
-      );
-      print('\n✓ Successfully generated launcher icons');
-    } catch (e) {
-      stderr.writeln('\n✕ Could not generate launcher icons');
-      stderr.writeln(e);
-      exit(2);
-    }
-  } else {
-    try {
-      for (String flavor in flavors) {
-        print('\nFlavor: $flavor');
-        final flutterLauncherIconsConfigs =
-            Config.loadConfigFromFlavor(flavor, prefixPath);
-        if (flutterLauncherIconsConfigs == null) {
-          throw NoConfigFoundException(
-            'No configuration found for $flavor flavor.',
-          );
-        }
-        await createIconsFromConfig(
-          flutterLauncherIconsConfigs,
-          logger,
-          prefixPath,
-          flavor,
-        );
-      }
-      print('\n✓ Successfully generated launcher icons for flavors');
-    } catch (e) {
-      stderr.writeln('\n✕ Could not generate launcher icons for flavors');
-      stderr.writeln(e);
-      exit(2);
-    }
+  // Create icons
+
+  // Load configs from given file(defaults to ./flutter_launcher_icons.yaml) or from ./pubspec.yaml
+
+  final flutterLauncherIconsConfigs = loadConfigFileFromArgResults(configJson);
+  if (flutterLauncherIconsConfigs == null) {
+    throw NoConfigFoundException(
+      'No configuration found in $defaultConfigFile or in ${constants.pubspecFilePath}. '
+      'In case file exists in different directory use --file option',
+    );
+  }
+  try {
+    await createIconsFromConfig(
+      flutterLauncherIconsConfigs,
+      logger,
+      prefixPath,
+    );
+    print('\n✓ Successfully generated launcher icons');
+  } catch (e) {
+    stderr.writeln('\n✕ Could not generate launcher icons');
+    stderr.writeln(e);
+    exit(2);
   }
 }
 
@@ -136,13 +108,22 @@ Future<void> createIconsFromConfig(
   }
 
   if (flutterConfigs.isNeedingNewAndroidIcon) {
-    android_launcher_icons.createDefaultIcons(flutterConfigs, flavor);
+    android_launcher_icons.createDefaultIcons(
+      flutterConfigs,
+      flavor,
+    );
   }
   if (flutterConfigs.hasAndroidAdaptiveConfig) {
-    android_launcher_icons.createAdaptiveIcons(flutterConfigs, flavor);
+    android_launcher_icons.createAdaptiveIcons(
+      flutterConfigs,
+      flavor,
+    );
   }
   if (flutterConfigs.isNeedingNewIOSIcon) {
-    ios_launcher_icons.createIcons(flutterConfigs, flavor);
+    ios_launcher_icons.createIcons(
+      flutterConfigs,
+      flavor,
+    );
   }
 
   // Generates Icons for given platform
@@ -153,28 +134,12 @@ Future<void> createIconsFromConfig(
     flavor: flavor,
     platforms: (context) {
       final platforms = <IconGenerator>[];
-      if (flutterConfigs.hasWebConfig) {
-        platforms.add(WebIconGenerator(context));
-      }
-      if (flutterConfigs.hasWindowsConfig) {
-        platforms.add(WindowsIconGenerator(context));
-      }
-      if (flutterConfigs.hasMacOSConfig) {
-        platforms.add(MacOSIconGenerator(context));
-      }
       return platforms;
     },
   );
 }
 
-Config? loadConfigFileFromArgResults(
-  ArgResults argResults,
-) {
-  final String prefixPath = argResults[prefixOption];
-  final flutterLauncherIconsConfigs = Config.loadConfigFromPath(
-        argResults[fileOption],
-        prefixPath,
-      ) ??
-      Config.loadConfigFromPubSpec(prefixPath);
+Config? loadConfigFileFromArgResults(Map<String, dynamic> configJson) {
+  final flutterLauncherIconsConfigs = Config.fromJson(configJson);
   return flutterLauncherIconsConfigs;
 }

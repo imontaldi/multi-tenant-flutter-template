@@ -47,8 +47,12 @@ List<IosIconTemplate> iosIcons = <IosIconTemplate>[
 ];
 
 /// create the ios icons
-void createIcons(Config config, String? flavor) {
+void createIcons(
+  Config config,
+  String? flavor,
+) {
   // TODO(p-mazhnik): support prefixPath
+
   final String? filePath = config.getImagePathIOS();
   if (filePath == null) {
     throw const InvalidConfigException(errorMissingImagePath);
@@ -75,16 +79,7 @@ void createIcons(Config config, String? flavor) {
   }
   String iconName;
   final dynamic iosConfig = config.ios;
-  if (flavor != null) {
-    final String catalogName = 'AppIcon-$flavor';
-    printStatus('Building iOS launcher icon for $flavor');
-    for (IosIconTemplate template in iosIcons) {
-      saveNewIcons(template, image, catalogName);
-    }
-    iconName = iosDefaultIconName;
-    changeIosLauncherIcon(catalogName, flavor);
-    modifyContentsFile(catalogName);
-  } else if (iosConfig is String) {
+  if (iosConfig is String) {
     // If the IOS configuration is a string then the user has specified a new icon to be created
     // and for the old icon file to be kept
     final String newIconName = iosConfig;
