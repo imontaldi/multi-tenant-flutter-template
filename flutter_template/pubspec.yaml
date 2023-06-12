@@ -33,9 +33,6 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-
-package_rename_config:
-
 flutter_icons:
 # Run: flutter pub run flutter_launcher_icons
   # Global
