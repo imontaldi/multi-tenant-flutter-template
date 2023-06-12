@@ -16,10 +16,8 @@ library package_rename;
 
 import 'dart:convert';
 
-import 'package:args/args.dart';
 import 'package:logger/logger.dart';
 import 'package:universal_io/io.dart';
-import 'package:yaml/yaml.dart' as yaml;
 
 part 'constants.dart';
 part 'exceptions.dart';
@@ -59,25 +57,10 @@ Future<void> set(List<String> args) async {
   try {
     _logger.w(_majorTaskDoneLine);
 
-    if (!_configFileExists()) throw _PackageRenameErrors.filesNotFound;
-
-    // Create args parser to get flavour flag and its value
-    final parser = ArgParser()
-      ..addOption(
-        'flavour',
-        abbr: 'f',
-        help: 'The flavour of the configuration to be used.',
-        aliases: ['flavor'],
-      );
-    final results = parser.parse(args);
-    final flavour = results['flavour'] as String?;
-
-    final config = _getConfig(flavour: flavour);
-
     final configFileContent = await File('config.json').readAsString();
     final configJson = jsonDecode(configFileContent) as Map<String, dynamic>;
 
-    _setAndroidConfigurations(config['android'], configJson);
+    _setAndroidConfigurations(configJson);
     _setIOSConfigurations(configJson);
 
     _logger.i(_successMessage);
@@ -90,31 +73,4 @@ Future<void> set(List<String> args) async {
   } finally {
     _logger.close();
   }
-}
-
-bool _configFileExists() {
-  final configFile = File(_packageRenameConfigFileName);
-  final pubspecFile = File(_pubspecFileName);
-  return configFile.existsSync() || pubspecFile.existsSync();
-}
-
-Map<String, dynamic> _getConfig({required String? flavour}) {
-  final yamlFile = File(_packageRenameConfigFileName).existsSync()
-      ? File(_packageRenameConfigFileName)
-      : File(_pubspecFileName);
-
-  final yamlString = yamlFile.readAsStringSync();
-  final parsedYaml = yaml.loadYaml(yamlString) as Map;
-
-  final rawConfig =
-      parsedYaml[_configKey + (flavour != null ? '-$flavour' : '')];
-  if (rawConfig == null) {
-    throw flavour == null
-        ? _PackageRenameErrors.configNotFound
-        : _PackageRenameErrors.flavourNotFound(flavour);
-  } else if (rawConfig is! Map) {
-    throw _PackageRenameErrors.invalidConfig;
-  }
-
-  return Map<String, dynamic>.from(rawConfig);
 }

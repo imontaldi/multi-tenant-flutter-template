@@ -1,10 +1,6 @@
 part of package_rename;
 
 // ! File Names
-// ? Root
-const _packageRenameConfigFileName = 'package_rename_config.yaml';
-const _pubspecFileName = 'pubspec.yaml';
-
 // ? Android
 const _androidManifestFileName = 'AndroidManifest.xml';
 const _buildGradleFileName = 'build.gradle';
@@ -12,11 +8,6 @@ const _buildGradleFileName = 'build.gradle';
 // ? iOS
 const _infoPlistFileName = 'Info.plist';
 const _projectFileName = 'project.pbxproj';
-
-// ! Keys
-const _configKey = 'package_rename_config';
-const _languageKey = 'lang';
-const _overrideOldPackageKey = 'override_old_package';
 
 // ! Directory Paths
 // ? Android

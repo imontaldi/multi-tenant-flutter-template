@@ -33,19 +33,8 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-# Run: dart run package_rename
+
 package_rename_config:
-  android:
-    app_name: Ejemplo
-    package_name: com.siltium.lunes
-    override_old_package_name: com.example.template
-    lang: kotlin
-
-  ios:
-    app_name: Caja de Seguros
-    bundle_name: siltium_seguros
-    package_name: com.siltium.lunes
-
 
 flutter_icons:
 # Run: flutter pub run flutter_launcher_icons

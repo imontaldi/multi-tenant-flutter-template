@@ -6,30 +6,6 @@ const _successMessage = '''
 ╚═════════════════════════════════════════════════════════════╝
 ''';
 
-const _filesNotFoundMessage = '''
-╔══════════════════════════════════════════════════════════════════════╗
-║   Neither `pubspec.yaml` nor `package_rename_config.yaml` found!!!   ║
-╚══════════════════════════════════════════════════════════════════════╝
-''';
-
-const _configNotFoundMessage = '''
-╔══════════════════════════════════════════════════════╗
-║   `package_rename_config` key not found or NULL!!!   ║
-╚══════════════════════════════════════════════════════╝
-''';
-
-const _invalidConfigMessage = '''
-╔══════════════════════════════╗
-║   Invalid Configuration!!!   ║
-╚══════════════════════════════╝
-''';
-
-const _invalidAndroidConfigMessage = '''
-╔═══════════════════════════════════════╗
-║   Invalid Android Configuration!!!.   ║
-╚═══════════════════════════════════════╝
-''';
-
 const _invalidAppNameMessage = '''
 ╔═══════════════════════════════════════════╗
 ║   app_name (App Name) must be a String.   ║
@@ -76,10 +52,4 @@ const _invalidAndroidLangValueMessage = '''
 ╔════════════════════════════════════════════════════════╗
 ║   lang (Language) must be either 'kotlin' or 'java'.   ║
 ╚════════════════════════════════════════════════════════╝
-''';
-
-const _androidOldDirectoryNotFoundMessage = '''
-╔═════════════════════════════════════════════════╗
-║   Old directory for MainActivity not found!!!   ║
-╚═════════════════════════════════════════════════╝
 ''';
