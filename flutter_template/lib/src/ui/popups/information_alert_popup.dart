@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '/src/utils/extensions.dart';
-import '../../../values/k_colors.dart';
 import '/values/k_values.dart';
 
 class InformationAlertPopup {
@@ -142,8 +141,9 @@ class InformationAlertPopup {
           softWrap: true,
           textAlign: TextAlign.center,
           style: titleStyle ??
-              const TextStyle(
-                color: KBlack_T1,
+              TextStyle(
+                color: Color(int.parse(
+                    const String.fromEnvironment("colors_KBlack_T1"))),
                 fontWeight: FontWeight.w700,
                 fontSize: KFontSizeXLarge45,
               ),
@@ -159,8 +159,9 @@ class InformationAlertPopup {
             textAlign: TextAlign.center,
             softWrap: true,
             style: subtitle1Style ??
-                const TextStyle(
-                  color: KGray,
+                TextStyle(
+                  color: Color(
+                      int.parse(const String.fromEnvironment("colors_KGray"))),
                   fontWeight: FontWeight.w400,
                   fontSize: KFontSizeMedium35,
                 ),
@@ -176,8 +177,9 @@ class InformationAlertPopup {
           textAlign: TextAlign.center,
           softWrap: true,
           style: subtitle2Style ??
-              const TextStyle(
-                color: KGray,
+              TextStyle(
+                color: Color(
+                    int.parse(const String.fromEnvironment("colors_KGray"))),
                 fontWeight: FontWeight.w400,
                 fontSize: KFontSizeMedium35,
               ),
@@ -192,8 +194,9 @@ class InformationAlertPopup {
           textAlign: TextAlign.center,
           softWrap: true,
           style: subtitle3Style ??
-              const TextStyle(
-                color: KGray,
+              TextStyle(
+                color: Color(
+                    int.parse(const String.fromEnvironment("colors_KGray"))),
                 fontWeight: FontWeight.w400,
                 fontSize: KFontSizeMedium35,
               ),
@@ -208,8 +211,9 @@ class InformationAlertPopup {
           textAlign: TextAlign.center,
           softWrap: true,
           style: footerTextStyle ??
-              const TextStyle(
-                color: KGray,
+              TextStyle(
+                color: Color(
+                    int.parse(const String.fromEnvironment("colors_KGray"))),
                 fontWeight: FontWeight.w400,
                 fontSize: KFontSizeMedium35,
               ),
@@ -249,7 +253,8 @@ class InformationAlertPopup {
                 "images/icon_close.png",
                 fit: BoxFit.cover,
                 alignment: Alignment.center,
-                color: KPrimary,
+                color: Color(
+                    int.parse(const String.fromEnvironment("colors_KPrimary"))),
                 height: 20,
               ),
             ),
@@ -275,7 +280,8 @@ class InformationAlertPopup {
           },
           style: TextButton.styleFrom(
             padding: const EdgeInsets.all(0),
-            backgroundColor: KPrimary,
+            backgroundColor: Color(
+                int.parse(const String.fromEnvironment("colors_KPrimary"))),
             textStyle: const TextStyle(fontSize: 20),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20),
@@ -334,8 +340,9 @@ class InformationAlertPopup {
                 child: Text(
                   labelButtonCancel ?? "",
                   textAlign: TextAlign.center,
-                  style: const TextStyle(
-                    color: KPrimary,
+                  style: TextStyle(
+                    color: Color(int.parse(
+                        const String.fromEnvironment("colors_KPrimary"))),
                     fontWeight: FontWeight.bold,
                     fontSize: KFontSizeMedium35,
                   ),

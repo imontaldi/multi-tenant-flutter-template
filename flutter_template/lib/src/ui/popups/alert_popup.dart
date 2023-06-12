@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '/src/utils/extensions.dart';
 
-import '../../../values/k_colors.dart';
 import '../../../values/k_values.dart';
 
 class AlertPopup {
@@ -46,8 +45,12 @@ class AlertPopup {
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: [
-                KPrimary.withOpacity(backgroundOpacity),
-                KPrimary_L3.withOpacity(backgroundOpacity)
+                Color(int.parse(
+                        const String.fromEnvironment("colors_KPrimary")))
+                    .withOpacity(backgroundOpacity),
+                Color(int.parse(
+                        const String.fromEnvironment("colors_KPrimary_L3")))
+                    .withOpacity(backgroundOpacity)
               ])),
         ),
         Center(
@@ -104,8 +107,9 @@ class AlertPopup {
         child: Text(
           title.isNotEmpty ? title : "",
           softWrap: true,
-          style: const TextStyle(
-            color: KGray,
+          style: TextStyle(
+            color:
+                Color(int.parse(const String.fromEnvironment("colors_KGray"))),
             fontWeight: FontWeight.w400,
             fontSize: KFontSizeXLarge45,
           ),
@@ -118,8 +122,9 @@ class AlertPopup {
         child: Text(
           description.isNotEmpty ? description : "",
           softWrap: true,
-          style: const TextStyle(
-            color: KGray_L1,
+          style: TextStyle(
+            color:
+                Color(int.parse(const String.fromEnvironment("colors_KGray"))),
             fontWeight: FontWeight.w400,
             fontSize: KFontSizeXLarge45,
           ),
@@ -152,7 +157,8 @@ class AlertPopup {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
           padding: const EdgeInsets.all(0),
-          foregroundColor: KPrimary_L1,
+          foregroundColor: Color(
+              int.parse(const String.fromEnvironment("colors_KPrimary_L1"))),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(50),
           )),
@@ -185,7 +191,8 @@ class AlertPopup {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
           padding: const EdgeInsets.all(0),
-          foregroundColor: KGray,
+          foregroundColor:
+              Color(int.parse(const String.fromEnvironment("colors_KGray"))),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(50),
           )),
@@ -231,7 +238,8 @@ class AlertPopup {
               "images/icon_close.png",
               fit: BoxFit.cover,
               alignment: Alignment.bottomRight,
-              color: KPrimary_L1,
+              color: Color(int.parse(
+                  const String.fromEnvironment("colors_KPrimary_L1"))),
               height: 20,
             ),
           ),

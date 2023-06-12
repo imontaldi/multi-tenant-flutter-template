@@ -84,3 +84,18 @@ String replaceSpace(String? entryText) {
   }
   return '-';
 }
+
+// //Colors
+// Color sColor(String hexCode) {
+//   return Color(int.parse(String.fromEnvironment(hexCode)));
+// }
+
+// //Api
+// String sApi(String endpoint) {
+//   return String.fromEnvironment(endpoint);
+// }
+
+// //Icons
+// String sIcons(String path) {
+//   return String.fromEnvironment(path);
+// }

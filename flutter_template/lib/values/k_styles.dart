@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_template/values/k_colors.dart';
 
 bottomContainerShadow() => const BoxShadow(
     color: Color(0x40666666),
@@ -19,9 +18,9 @@ centerContainerShadow() => const BoxShadow(
     blurRadius: 5,
     offset: Offset(0, 0));
 
-topContainerOrangeShadow() => const BoxShadow(
-      color: KPrimary,
+topContainerOrangeShadow() => BoxShadow(
+      color: Color(int.parse(const String.fromEnvironment("colors_KPrimary"))),
       spreadRadius: -5,
       blurRadius: 5,
-      offset: Offset(0, 4),
+      offset: const Offset(0, 4),
     );

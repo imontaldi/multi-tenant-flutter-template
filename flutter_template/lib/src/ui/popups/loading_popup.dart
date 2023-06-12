@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_template/values/k_colors.dart';
 import '/src/ui/components/loading_component.dart';
 import '/src/support/futuristic.dart';
 
@@ -50,7 +49,12 @@ class LoadingPopup {
         gradient: LinearGradient(
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
-          colors: [KPrimary.withOpacity(0.5), KPrimary.withOpacity(0.5)],
+          colors: [
+            Color(int.parse(const String.fromEnvironment("colors_KPrimary")))
+                .withOpacity(0.5),
+            Color(int.parse(const String.fromEnvironment("colors_KPrimary")))
+                .withOpacity(0.5)
+          ],
         ),
       ),
       child: Column(

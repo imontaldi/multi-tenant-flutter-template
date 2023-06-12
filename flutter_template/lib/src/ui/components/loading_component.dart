@@ -1,7 +1,6 @@
 // ignore_for_file: unnecessary_null_comparison, unnecessary_type_check
 
 import 'package:flutter/material.dart';
-import 'package:flutter_template/values/k_colors.dart';
 
 class LoadingComponent extends StatefulWidget {
   final Color color;
@@ -97,7 +96,8 @@ Widget loadingComponent(bool isVisible,
       color: Colors.transparent,
       alignment: Alignment.center,
       child: LoadingComponent(
-        color: color ?? KPrimary,
+        color: color ??
+            Color(int.parse(const String.fromEnvironment("colors_KPrimary"))),
         size: size,
       ),
     ),

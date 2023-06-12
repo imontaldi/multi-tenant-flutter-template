@@ -4,7 +4,6 @@ import 'package:flutter/services.dart';
 import 'package:mvc_pattern/mvc_pattern.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:page_transition/page_transition.dart';
-import '../../../values/k_colors.dart';
 import '../../utils/page_args.dart';
 
 import '../page_controllers/init_page_controller.dart';
@@ -40,7 +39,7 @@ class _InitPageState extends StateMVC<InitPage> {
             return _con.goInitialPage();
           },
           animationDuration: const Duration(milliseconds: 1000),
-          backgroundColor: KWhite,
+          backgroundColor: const Color(0xFFFFFFFF),
           splashTransition: SplashTransition.fadeTransition,
           pageTransitionType: PageTransitionType.fade,
           curve: Curves.linear,
