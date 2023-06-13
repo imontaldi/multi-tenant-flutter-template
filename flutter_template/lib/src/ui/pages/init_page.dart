@@ -1,6 +1,5 @@
 // ignore_for_file: depend_on_referenced_packages, library_private_types_in_public_api, no_logic_in_create_state
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:mvc_pattern/mvc_pattern.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:page_transition/page_transition.dart';
@@ -25,7 +24,6 @@ class _InitPageState extends StateMVC<InitPage> {
   @override
   void initState() {
     _con.initPage(arguments: args);
-    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
     super.initState();
   }
 
