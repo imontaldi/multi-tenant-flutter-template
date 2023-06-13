@@ -108,6 +108,7 @@ Future<void> createIconsFromConfig(
   }
 
   if (flutterConfigs.isNeedingNewAndroidIcon) {
+    android_launcher_icons.deleteOldAdaptiveIcons();
     android_launcher_icons.createDefaultIcons(
       flutterConfigs,
       flavor,

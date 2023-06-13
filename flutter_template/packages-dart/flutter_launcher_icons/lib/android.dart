@@ -1,5 +1,4 @@
 // ignore_for_file: public_member_api_docs
-
 import 'dart:io';
 
 import 'package:flutter_launcher_icons/config/config.dart';
@@ -33,6 +32,31 @@ List<AndroidIconTemplate> androidIcons = <AndroidIconTemplate>[
   AndroidIconTemplate(directoryName: 'mipmap-xxhdpi', size: 144),
   AndroidIconTemplate(directoryName: 'mipmap-xxxhdpi', size: 192),
 ];
+
+void deleteOldAdaptiveIcons() {
+  try {
+    Directory dirToDelete;
+    for (var folder in adaptiveForegroundIcons) {
+      dirToDelete =
+          Directory('${androidResFolder(null)}${folder.directoryName}');
+
+      if (dirToDelete.existsSync()) {
+        dirToDelete.deleteSync(recursive: true);
+      }
+    }
+    dirToDelete = Directory(androidAdaptiveXmlFolder(null));
+    if (dirToDelete.existsSync()) {
+      dirToDelete.deleteSync(recursive: true);
+    }
+
+    final File colorsXml = File(androidColorsFile(null));
+    if (colorsXml.existsSync()) {
+      colorsXml.deleteSync();
+    }
+  } catch (e) {
+    print(e);
+  }
+}
 
 void createDefaultIcons(
   Config config,
