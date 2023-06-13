@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_template/values/k_resouces.dart';
 import 'package:mvc_pattern/mvc_pattern.dart';
 import '../../managers/translate_manager.dart';
 import '../../utils/page_args.dart';
@@ -43,17 +44,18 @@ class HomePagePageState extends StateMVC<HomePage> {
               Text(
                 "Prueba",
                 style: TextStyle(
-                    color: Color(int.parse(
-                        const String.fromEnvironment("colors_KPrimary")))),
+                  color: kColors("KPrimary"),
+                ),
               ),
-              const Text(
-                String.fromEnvironment("api_KApiUrl"),
+              Text(
+                kApiStrings("KApiUrl"),
               ),
-              const Text(
-                String.fromEnvironment("api_KApiLogin"),
+              Text(
+                kApiStrings("KApiLogin"),
               ),
               Image.asset(
-                  const String.fromEnvironment("icons_KIconExamplePath"))
+                kIconsPaths("KIconExamplePath"),
+              )
             ],
           ),
         ),

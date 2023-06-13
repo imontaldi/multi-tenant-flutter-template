@@ -5,13 +5,19 @@
     "appIcon_image": "images/app_icon/icon.png",
     "appIcon_foregroundImage": "images/app_icon/icon_transparent_background.png",
     "appIcon_backgroundColor": "#FFFFFF",
-    "api_KApiUrl": "https://api2.hoteltogo.staging.silentiumapps.com/api/",
-    "api_KApiLogin": "auth/login",
-    "colors_KBlack_T1": "0xFF3F3F3E",
-    "colors_KGray": "0xFF6C6C6C",
-    "colors_KPrimary_L1": "0xFFE12E31",
-    "colors_KPrimary_L3": "0xFFF09697",
-    "colors_KPrimary": "0xFFEB7743",
-    "colors_KWhite": "0xFFFFFFFF",
-    "icons_KIconExamplePath": "images/dash.png"
+    "api": {
+        "KApiUrl": "https://api2.hoteltogo.staging.silentiumapps.com/api/",
+        "KApiLogin": "auth/login"
+    },
+    "colors": {
+        "KBlack_T1": "0xFF3F3F3E",
+        "KGray": "0xFF6C6C6C",
+        "KPrimary_L1": "0xFFE12E31",
+        "KPrimary_L3": "0xFFF09697",
+        "KPrimary": "0xFFEB7743",
+        "KWhite": "0xFFFFFFFF"
+    },
+    "icons": {
+        "KIconExamplePath": "images/dash.png"
+    }
 }
