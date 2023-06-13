@@ -1,4 +1,4 @@
-package com.siltium.hola
+package com.siltium.multiTemplate
 
 import io.flutter.embedding.android.FlutterActivity
 

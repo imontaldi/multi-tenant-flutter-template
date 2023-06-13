@@ -8,8 +8,8 @@ String kApiStrings(String key) {
 }
 
 Color kColors(String key) {
-  return Color(int.parse(jsonDecode(_convertToJsonStringQuotes(
-      raw: const String.fromEnvironment('colors')))[key]));
+  return Color(int.parse(
+      "0xFF${jsonDecode(_convertToJsonStringQuotes(raw: const String.fromEnvironment('colors')))[key].substring(1)}"));
 }
 
 String kIconsPaths(String key) {

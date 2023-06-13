@@ -1,21 +1,21 @@
 {
-    "appName": "Caja de Seguros",
-    "packageName": "com.siltium.hola",
-    "bundleName": "siltium_seguros",
+    "appName": "Multi Tenant Template",
+    "packageName": "com.siltium.multiTemplate",
+    "bundleName": "multi_template",
     "appIcon_image": "images/app_icon/icon.png",
     "appIcon_foregroundImage": "images/app_icon/icon_transparent_background.png",
     "appIcon_backgroundColor": "#FFFFFF",
     "api": {
-        "KApiUrl": "https://api2.hoteltogo.staging.silentiumapps.com/api/",
+        "KApiUrl": "https://api.someproject.staging.siltium.com/api/",
         "KApiLogin": "auth/login"
     },
     "colors": {
-        "KBlack_T1": "0xFF3F3F3E",
-        "KGray": "0xFF6C6C6C",
-        "KPrimary_L1": "0xFFE12E31",
-        "KPrimary_L3": "0xFFF09697",
-        "KPrimary": "0xFFEB7743",
-        "KWhite": "0xFFFFFFFF"
+        "KBlack_T1": "#3F3F3E",
+        "KGray": "#6C6C6C",
+        "KPrimary_L1": "#E12E31",
+        "KPrimary_L3": "#F09697",
+        "KPrimary": "#EB7743",
+        "KWhite": "#FFFFFF"
     },
     "icons": {
         "KIconExamplePath": "images/dash.png"

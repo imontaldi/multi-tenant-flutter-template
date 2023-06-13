@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_template/src/enums/culture.dart';
 import 'package:flutter_template/src/ui/pages/init_page.dart';
+import 'package:flutter_template/values/k_resouces.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'src/managers/page_manager.dart';
@@ -11,8 +12,8 @@ import 'src/providers/app_provider.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-    statusBarColor: Color(0xFFEB7743),
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    statusBarColor: kColors("KPrimary"),
   ));
   runApp(
     MultiProvider(
