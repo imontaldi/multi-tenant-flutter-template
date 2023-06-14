@@ -1,7 +1,11 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
-import '../../src/utils/extensions.dart';
 
+// Package imports:
+import 'package:intl/intl.dart';
+
+// Project imports:
+import '../../src/utils/extensions.dart';
 import '../managers/page_manager.dart';
 
 //Currency

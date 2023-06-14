@@ -1,8 +1,12 @@
+// Dart imports:
 import 'dart:convert';
+
+// Package imports:
 import 'package:shared_preferences/shared_preferences.dart';
+
+// Project imports:
 import '../../src/data_access/dummy_data_access.dart';
 import '../../src/interfaces/i_data_access.dart';
-
 import '../enums/culture.dart';
 import '../support/network/network.dart';
 

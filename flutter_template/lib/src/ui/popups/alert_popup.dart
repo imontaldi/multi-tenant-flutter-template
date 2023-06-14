@@ -1,8 +1,10 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:flutter_template/values/k_resouces.dart';
-import '/src/utils/extensions.dart';
 
+// Project imports:
+import '../../../values/k_resouces.dart';
 import '../../../values/k_values.dart';
+import '/src/utils/extensions.dart';
 
 class AlertPopup {
   final BuildContext context;

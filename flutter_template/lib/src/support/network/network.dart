@@ -1,8 +1,13 @@
 // ignore_for_file: constant_identifier_names
 
+// Dart imports:
 import 'dart:io';
+
+// Package imports:
 import 'package:dio/dio.dart';
 import 'package:dio_cache_interceptor/dio_cache_interceptor.dart';
+
+// Project imports:
 import 'http_method_enum.dart';
 import 'network_request.dart';
 import 'network_response.dart';

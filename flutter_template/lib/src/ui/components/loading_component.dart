@@ -1,7 +1,10 @@
 // ignore_for_file: unnecessary_null_comparison, unnecessary_type_check
 
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:flutter_template/values/k_resouces.dart';
+
+// Project imports:
+import '../../../values/k_resouces.dart';
 
 class LoadingComponent extends StatefulWidget {
   final Color color;

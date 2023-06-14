@@ -1,29 +1,31 @@
-// ignore_for_file: depend_on_referenced_packages, library_private_types_in_public_api, no_logic_in_create_state
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:mvc_pattern/mvc_pattern.dart';
-import 'package:animated_splash_screen/animated_splash_screen.dart';
-import 'package:page_transition/page_transition.dart';
-import '../../utils/page_args.dart';
 
+// Package imports:
+import 'package:animated_splash_screen/animated_splash_screen.dart';
+import 'package:mvc_pattern/mvc_pattern.dart';
+import 'package:page_transition/page_transition.dart';
+
+// Project imports:
+import '../../utils/page_args.dart';
 import '../page_controllers/init_page_controller.dart';
 
 class InitPage extends StatefulWidget {
   final PageArgs? args;
   const InitPage(this.args, {Key? key}) : super(key: key);
   @override
-  _InitPageState createState() => _InitPageState(args);
+  InitPageState createState() => InitPageState();
 }
 
-class _InitPageState extends StateMVC<InitPage> {
+class InitPageState extends StateMVC<InitPage> {
   late InitPageController _con;
-  PageArgs? args;
-  _InitPageState(PageArgs? arguments) : super(InitPageController(arguments)) {
+
+  InitPageState() : super(InitPageController()) {
     _con = InitPageController.con;
-    args = arguments;
   }
   @override
   void initState() {
-    _con.initPage(arguments: args);
+    _con.initPage(arguments: widget.args);
     super.initState();
   }
 

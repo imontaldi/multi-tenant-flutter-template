@@ -1,6 +1,11 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:flutter_template/values/k_resouces.dart';
+
+// Package imports:
 import 'package:mvc_pattern/mvc_pattern.dart';
+
+// Project imports:
+import '../../../values/k_resouces.dart';
 import '../../managers/translate_manager.dart';
 import '../../utils/page_args.dart';
 import '../page_controllers/home_page_controller.dart';
@@ -15,7 +20,6 @@ class HomePage extends StatefulWidget {
 
 class HomePagePageState extends StateMVC<HomePage> {
   late HomePageController _con;
-  PageArgs? args;
 
   HomePagePageState() : super(HomePageController()) {
     _con = HomePageController.con;

@@ -1,6 +1,8 @@
+// Dart imports:
 import 'dart:convert';
-import '../../src/support/sort_criterion.dart';
 
+// Project imports:
+import '../../src/support/sort_criterion.dart';
 import 'filter_criterion.dart';
 
 class QueryCriteria {

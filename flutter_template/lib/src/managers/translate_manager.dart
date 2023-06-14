@@ -1,4 +1,7 @@
+// Package imports:
 import 'package:flutter_gen/gen_l10n/app_localizations.dart' as i10n;
+
+// Project imports:
 import 'page_manager.dart';
 
 class TranslateManager {

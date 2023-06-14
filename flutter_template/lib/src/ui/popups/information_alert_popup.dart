@@ -1,5 +1,8 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:flutter_template/values/k_resouces.dart';
+
+// Project imports:
+import '../../../values/k_resouces.dart';
 import '/src/utils/extensions.dart';
 import '/values/k_values.dart';
 

@@ -1,7 +1,10 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:flutter_template/values/k_resouces.dart';
-import '/src/ui/components/loading_component.dart';
+
+// Project imports:
+import '../../../values/k_resouces.dart';
 import '/src/support/futuristic.dart';
+import '/src/ui/components/loading_component.dart';
 
 class LoadingPopup {
   final BuildContext context;

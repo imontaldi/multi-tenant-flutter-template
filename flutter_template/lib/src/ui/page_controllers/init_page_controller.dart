@@ -1,21 +1,24 @@
-import 'package:flutter_template/src/ui/pages/home_page.dart';
+// Package imports:
 import 'package:mvc_pattern/mvc_pattern.dart';
+
+// Project imports:
 import '../../interfaces/i_view_controller.dart';
 import '../../managers/data_manager.dart';
 import '../../providers/app_provider.dart';
 import '../../utils/page_args.dart';
+import '../pages/home_page.dart';
 
 class InitPageController extends ControllerMVC implements IViewController {
   static late InitPageController _this;
 
-  factory InitPageController(PageArgs? args) {
-    _this = InitPageController._(args);
+  factory InitPageController() {
+    _this = InitPageController._();
     return _this;
   }
 
   static InitPageController get con => _this;
   PageArgs? args;
-  InitPageController._(this.args);
+  InitPageController._();
 
   @override
   void initPage({PageArgs? arguments}) {

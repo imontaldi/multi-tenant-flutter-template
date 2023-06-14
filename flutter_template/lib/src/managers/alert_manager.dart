@@ -1,4 +1,7 @@
+// Flutter imports:
 import 'package:flutter/cupertino.dart';
+
+// Project imports:
 import '../../src/ui/popups/alert_popup.dart';
 
 class AlertManager {
