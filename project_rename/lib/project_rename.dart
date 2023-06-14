@@ -16,9 +16,20 @@ void projectRename() {
   pubspecContent =
       pubspecContent.replaceAll(oldProjectName, configJson['proyectName']);
 
-  pubspec.writeAsStringSync(pubspecContent);
-
   Directory projectDirectory = Directory("../$oldProjectName");
 
-  projectDirectory.renameSync("../${configJson["projectName"]}");
+  try {
+    //Se sobreescribe el nombre del proyecto en pubspec.yaml
+    pubspec.writeAsStringSync(pubspecContent);
+    //Se cambia el nombre del directorio
+    projectDirectory.renameSync("../${configJson["projectName"]}");
+    print("Renombrado exitoso");
+  } catch (e) {
+    pubspecContent = pubspec.readAsStringSync();
+    pubspecContent =
+        pubspecContent.replaceAll(configJson['proyectName'], oldProjectName);
+    pubspec.writeAsStringSync(pubspecContent);
+    print(
+        "No se pudo modificar el nombre de proyecto porque la carpeta está en uso");
+  }
 }
