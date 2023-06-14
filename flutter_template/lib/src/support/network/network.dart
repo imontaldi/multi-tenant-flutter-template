@@ -89,7 +89,6 @@ class Network {
     this.token = token;
   }
 
-
   Future checkInternetConnection() async {
     try {
       final result = await InternetAddress.lookup('google.com');
@@ -105,7 +104,6 @@ class Network {
 
   Future<NetworkResponse?> callApi(NetworkRequest request) async {
     try {
-
       await checkInternetConnection();
       Response? response;
 
@@ -125,11 +123,9 @@ class Network {
       }
 
       return _processResult(response!);
-    } on DioError catch (er)
-    {
+    } on DioException catch (er) {
       _processStatusCode(er.response);
-    }
-    on Exception {
+    } on Exception {
       throw const HttpResult(type: HttpCodesEnum.e404_NotFound);
     }
 
@@ -165,7 +161,6 @@ class Network {
 
     return null;
   }
-
 
   Future<Response> _post(NetworkRequest request) async {
     Options options = Options();
@@ -214,10 +209,10 @@ class Network {
   }
 
   _processStatusCode(Response? response) {
-    if(response != null){
-      if(response.statusCode == 200){
+    if (response != null) {
+      if (response.statusCode == 200) {
         return;
-      } else if(response.statusCode != null){
+      } else if (response.statusCode != null) {
         throw HttpResult(type: getErrorEnum(response.statusCode!));
       }
     }
@@ -225,7 +220,9 @@ class Network {
 
   HttpCodesEnum getErrorEnum(int code) {
     try {
-      return HttpCodesEnum.values.where((x) => x.toString().contains(code.toString())).single;
+      return HttpCodesEnum.values
+          .where((x) => x.toString().contains(code.toString()))
+          .single;
     } catch (e) {
       return HttpCodesEnum.e500_InternalServerError;
     }
