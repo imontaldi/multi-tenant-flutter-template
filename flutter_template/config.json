@@ -1,4 +1,5 @@
 {
+    "proyectName": "multi_template",
     "appName": "Multi Tenant Template",
     "packageName": "com.siltium.multiTemplate",
     "bundleName": "multi_template",
