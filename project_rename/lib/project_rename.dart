@@ -8,28 +8,23 @@ void projectRename() {
 
   File pubspec = File("../flutter_template/pubspec.yaml");
 
-  String pubspecContent = pubspec.readAsStringSync();
+  String originalPubspecContent = pubspec.readAsStringSync();
 
-  String oldProjectName = pubspecContent.substring(
-      pubspecContent.indexOf(":") + 2, pubspecContent.indexOf("\n"));
-
-  pubspecContent =
-      pubspecContent.replaceAll(oldProjectName, configJson['proyectName']);
+  String oldProjectName = originalPubspecContent.substring(
+      originalPubspecContent.indexOf(":") + 2,
+      originalPubspecContent.indexOf("\n"));
 
   Directory projectDirectory = Directory("../$oldProjectName");
 
   try {
     //Se sobreescribe el nombre del proyecto en pubspec.yaml
-    pubspec.writeAsStringSync(pubspecContent);
+    pubspec.writeAsStringSync(originalPubspecContent.replaceAll(
+        oldProjectName, configJson['proyectName']));
     //Se cambia el nombre del directorio
     projectDirectory.renameSync("../${configJson["projectName"]}");
     print("Renombrado exitoso");
   } catch (e) {
-    pubspecContent = pubspec.readAsStringSync();
-    pubspecContent =
-        pubspecContent.replaceAll(configJson['proyectName'], oldProjectName);
-    pubspec.writeAsStringSync(pubspecContent);
-    print(
-        "No se pudo modificar el nombre de proyecto porque la carpeta está en uso");
+    pubspec.writeAsStringSync(originalPubspecContent);
+    print(e);
   }
 }
