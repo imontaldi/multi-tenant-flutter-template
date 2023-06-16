@@ -4,8 +4,8 @@
     "packageName": "com.siltium.multiTemplate",
     "bundleName": "multi_template",
     "appIcon_image": "images/app_icon/icon.png",
-    "appIcon_foregroundImage": "images/app_icon/icon_transparent_background.png",
-    "appIcon_backgroundColor": "#FFFFFF",
+    "appIcon_foreground": "images/app_icon/icon_transparent_foreground.png",
+    "appIcon_background": "#FFFFFF",
     "api": {
         "KApiUrl": "https://api.someproject.staging.siltium.com/api/",
         "KApiLogin": "auth/login"
