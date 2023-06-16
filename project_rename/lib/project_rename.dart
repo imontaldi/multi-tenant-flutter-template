@@ -23,6 +23,8 @@ void projectRename() {
       File("${targetDirectory.path}/config.json").readAsStringSync();
   final configJson = jsonDecode(configFileContent) as Map<String, dynamic>;
 
+  final String newName = configJson['proyectName'].toString();
+
   File pubspec = File("${targetDirectory.path}/pubspec.yaml");
 
   String originalPubspecContent = pubspec.readAsStringSync();
@@ -36,10 +38,10 @@ void projectRename() {
 
   try {
     //Se sobreescribe el nombre del proyecto en pubspec.yaml
-    pubspec.writeAsStringSync(originalPubspecContent.replaceAll(
-        oldProjectName, configJson['proyectName']));
+    pubspec.writeAsStringSync(
+        originalPubspecContent.replaceAll(oldProjectName, newName));
     // Se cambia el nombre del directorio
-    targetDirectory.renameSync("${configJson["projectName"]}");
+    targetDirectory.renameSync("../$newName");
     print("Renombrado exitoso");
   } catch (e) {
     pubspec.writeAsStringSync(originalPubspecContent);
