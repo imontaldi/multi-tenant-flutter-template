@@ -10,7 +10,7 @@ Config _$ConfigFromJson(Map json) => Config(
       imagePath: json['appIcon_image'],
       android: true,
       ios: true,
-      adaptiveIconForeground: json['appIcon_foregroundImage'],
-      adaptiveIconBackground: json['appIcon_backgroundColor'],
+      adaptiveIconForeground: json['appIcon_foreground'],
+      adaptiveIconBackground: json['appIcon_background'],
       removeAlphaIOS: true,
     );
