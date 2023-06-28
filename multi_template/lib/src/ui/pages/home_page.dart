@@ -1,7 +1,6 @@
 // Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:multi_template/values/k_api.dart';
-import 'package:multi_template/values/k_icons.dart';
+import 'package:multi_template/values/k_resouces.dart';
 
 // Package imports:
 import 'package:mvc_pattern/mvc_pattern.dart';
