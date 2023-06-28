@@ -8,7 +8,7 @@ import '../utils/page_args.dart';
 
 class PageManager {
   static final PageManager _instance = PageManager._constructor();
-  final GlobalKey<NavigatorState> navigatorKey =  GlobalKey<NavigatorState>();
+  final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
   PageNames? currentPage;
 
@@ -39,18 +39,25 @@ class PageManager {
     switch (page) {
       case PageNames.home:
         return MaterialPageRoute(builder: (context) => HomePage(arguments));
-    default:
+      default:
         return throw Exception("No existe página con este PageName");
     }
   }
 
-  _goPage(String pageName, {PageArgs? args, Function(PageArgs args)? actionBack, bool makeRootPage = false}) {
+  _goPage(String pageName,
+      {PageArgs? args,
+      Function(PageArgs args)? actionBack,
+      bool makeRootPage = false}) {
     if (!makeRootPage) {
-      return navigatorKey.currentState?.pushNamed(pageName, arguments: args).then((value) {
+      return navigatorKey.currentState
+          ?.pushNamed(pageName, arguments: args)
+          .then((value) {
         if (actionBack != null) actionBack(value as PageArgs);
       });
     } else {
-      navigatorKey.currentState?.pushNamedAndRemoveUntil(pageName, (route) => false, arguments: args);
+      navigatorKey.currentState?.pushNamedAndRemoveUntil(
+          pageName, (route) => false,
+          arguments: args);
     }
   }
 }
