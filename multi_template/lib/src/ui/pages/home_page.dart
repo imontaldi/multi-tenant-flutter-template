@@ -1,13 +1,5 @@
 // Flutter imports:
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
-<<<<<<< HEAD
-import 'package:multi_template/values/k_resouces.dart';
-=======
-=======
->>>>>>> parent of 426e041 (add api class)
-import 'package:multi_template/values/k_colors.dart';
->>>>>>> parent of 72d4774 (add icon class)
 
 // Package imports:
 import 'package:mvc_pattern/mvc_pattern.dart';
