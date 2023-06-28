@@ -1,6 +1,10 @@
 // Flutter imports:
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:multi_template/values/k_resouces.dart';
+=======
+import 'package:multi_template/values/k_colors.dart';
+>>>>>>> parent of 72d4774 (add icon class)
 
 // Package imports:
 import 'package:mvc_pattern/mvc_pattern.dart';
@@ -58,7 +62,7 @@ class HomePagePageState extends StateMVC<HomePage> {
                 KApi().KApiLogin,
               ),
               Image.asset(
-                KIcons().KIconExamplePath,
+                kIconsPaths("KIconExamplePath"),
               )
             ],
           ),

@@ -38,3 +38,8 @@ String _convertToJsonStringQuotes({required String raw}) {
 
   return jsonString;
 }
+
+String kIconsPaths(String key) {
+  return jsonDecode(convertToJsonStringQuotes(
+      raw: const String.fromEnvironment('icons')))[key];
+}
