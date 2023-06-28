@@ -1,8 +1,11 @@
 // Flutter imports:
 import 'package:flutter/material.dart';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import 'package:multi_template/values/k_resouces.dart';
 =======
+=======
+>>>>>>> parent of 426e041 (add api class)
 import 'package:multi_template/values/k_colors.dart';
 >>>>>>> parent of 72d4774 (add icon class)
 
@@ -10,6 +13,7 @@ import 'package:multi_template/values/k_colors.dart';
 import 'package:mvc_pattern/mvc_pattern.dart';
 
 // Project imports:
+import '../../../values/k_resouces.dart';
 import '../../managers/translate_manager.dart';
 import '../../utils/page_args.dart';
 import '../page_controllers/home_page_controller.dart';
@@ -56,10 +60,10 @@ class HomePagePageState extends StateMVC<HomePage> {
                 ),
               ),
               Text(
-                KApi().KApiUrl,
+                kApiStrings("KApiUrl"),
               ),
               Text(
-                KApi().KApiLogin,
+                kApiStrings("KApiLogin"),
               ),
               Image.asset(
                 kIconsPaths("KIconExamplePath"),
