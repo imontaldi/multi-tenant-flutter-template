@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 // Project imports:
-import '../../../values/k_colors.dart';
+import '../../../values/k_resouces.dart';
 import '/src/support/futuristic.dart';
 import '/src/ui/components/loading_component.dart';
 
@@ -54,8 +54,8 @@ class LoadingPopup {
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
           colors: [
-            KColors().KPrimary.withOpacity(0.5),
-            KColors().KPrimary.withOpacity(0.5)
+            kColors("KPrimary").withOpacity(0.5),
+            kColors("KPrimary").withOpacity(0.5)
           ],
         ),
       ),
