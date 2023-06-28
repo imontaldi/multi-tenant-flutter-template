@@ -9,8 +9,3 @@ String kApiStrings(String key) {
   return jsonDecode(
       convertToJsonStringQuotes(raw: const String.fromEnvironment('api')))[key];
 }
-
-String kIconsPaths(String key) {
-  return jsonDecode(convertToJsonStringQuotes(
-      raw: const String.fromEnvironment('icons')))[key];
-}

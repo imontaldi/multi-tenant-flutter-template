@@ -1,6 +1,7 @@
 // Flutter imports:
 import 'package:flutter/material.dart';
 import 'package:multi_template/values/k_colors.dart';
+import 'package:multi_template/values/k_icons.dart';
 
 // Package imports:
 import 'package:mvc_pattern/mvc_pattern.dart';
@@ -59,7 +60,7 @@ class HomePagePageState extends StateMVC<HomePage> {
                 kApiStrings("KApiLogin"),
               ),
               Image.asset(
-                kIconsPaths("KIconExamplePath"),
+                KIcons().KIconExamplePath,
               )
             ],
           ),
