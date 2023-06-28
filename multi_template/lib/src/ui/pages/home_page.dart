@@ -1,5 +1,6 @@
 // Flutter imports:
 import 'package:flutter/material.dart';
+import 'package:multi_template/values/k_api.dart';
 
 // Package imports:
 import 'package:mvc_pattern/mvc_pattern.dart';
@@ -52,10 +53,10 @@ class HomePagePageState extends StateMVC<HomePage> {
                 ),
               ),
               Text(
-                kApiStrings("KApiUrl"),
+                KApi().KApiUrl,
               ),
               Text(
-                kApiStrings("KApiLogin"),
+                KApi().KApiLogin,
               ),
               Image.asset(
                 kIconsPaths("KIconExamplePath"),
