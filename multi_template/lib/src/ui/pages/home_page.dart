@@ -1,5 +1,6 @@
 // Flutter imports:
 import 'package:flutter/material.dart';
+import 'package:multi_template/values/k_colors.dart';
 
 // Package imports:
 import 'package:mvc_pattern/mvc_pattern.dart';
@@ -48,7 +49,7 @@ class HomePagePageState extends StateMVC<HomePage> {
               Text(
                 "Prueba",
                 style: TextStyle(
-                  color: kColors("KPrimary"),
+                  color: KColors().KPrimary,
                 ),
               ),
               Text(

@@ -1,8 +1,8 @@
 // Flutter imports:
 import 'package:flutter/material.dart';
+import 'package:multi_template/values/k_colors.dart';
 
 // Project imports:
-import '../../../values/k_resouces.dart';
 import '../../../values/k_values.dart';
 import '/src/utils/extensions.dart';
 
@@ -48,8 +48,8 @@ class AlertPopup {
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: [
-                kColors("KPrimary").withOpacity(backgroundOpacity),
-                kColors("KPrimary_L3").withOpacity(backgroundOpacity)
+                KColors().KPrimary.withOpacity(backgroundOpacity),
+                KColors().KPrimary_L3.withOpacity(backgroundOpacity)
               ])),
         ),
         Center(
@@ -107,7 +107,7 @@ class AlertPopup {
           title.isNotEmpty ? title : "",
           softWrap: true,
           style: TextStyle(
-            color: kColors("KGray"),
+            color: KColors().KGray,
             fontWeight: FontWeight.w400,
             fontSize: KFontSizeXLarge45,
           ),
@@ -121,7 +121,7 @@ class AlertPopup {
           description.isNotEmpty ? description : "",
           softWrap: true,
           style: TextStyle(
-            color: kColors("KGray"),
+            color: KColors().KGray,
             fontWeight: FontWeight.w400,
             fontSize: KFontSizeXLarge45,
           ),
@@ -154,7 +154,7 @@ class AlertPopup {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
           padding: const EdgeInsets.all(0),
-          foregroundColor: kColors("KPrimary_L1"),
+          foregroundColor: KColors().KPrimary_L1,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(50),
           )),
@@ -187,7 +187,7 @@ class AlertPopup {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
           padding: const EdgeInsets.all(0),
-          foregroundColor: kColors("KGray"),
+          foregroundColor: KColors().KGray,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(50),
           )),
@@ -233,7 +233,7 @@ class AlertPopup {
               "images/icon_close.png",
               fit: BoxFit.cover,
               alignment: Alignment.bottomRight,
-              color: kColors("KPrimary_L1"),
+              color: KColors().KPrimary_L1,
               height: 20,
             ),
           ),

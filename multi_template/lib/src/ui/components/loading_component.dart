@@ -2,9 +2,7 @@
 
 // Flutter imports:
 import 'package:flutter/material.dart';
-
-// Project imports:
-import '../../../values/k_resouces.dart';
+import 'package:multi_template/values/k_colors.dart';
 
 class LoadingComponent extends StatefulWidget {
   final Color color;
@@ -100,7 +98,7 @@ Widget loadingComponent(bool isVisible,
       color: Colors.transparent,
       alignment: Alignment.center,
       child: LoadingComponent(
-        color: color ?? kColors("KPrimary"),
+        color: color ?? KColors().KPrimary,
         size: size,
       ),
     ),
