@@ -12,13 +12,13 @@ import 'src/enums/culture.dart';
 import 'src/managers/page_manager.dart';
 import 'src/providers/app_provider.dart';
 import 'src/ui/pages/init_page.dart';
-import 'values/k_resouces.dart';
+import 'values/k_colors.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-    statusBarColor: kColors("KPrimary"),
+    statusBarColor: KColors().KPrimary,
   ));
   runApp(
     MultiProvider(

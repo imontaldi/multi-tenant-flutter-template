@@ -5,10 +5,10 @@ import 'dart:convert';
 import '../src/utils/functions_utils.dart';
 
 class KIcons {
-  String KIconExamplePath = _kIconsPaths("KIconExamplePath");
+  String KIconExamplePath = _kIconsPaths(key: "KIconExamplePath");
 }
 
-String _kIconsPaths(String key) {
+String _kIconsPaths({required String key}) {
   return jsonDecode(convertToJsonStringQuotes(
       raw: const String.fromEnvironment('icons')))[key];
 }

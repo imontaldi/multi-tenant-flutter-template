@@ -4,11 +4,11 @@ import 'dart:convert';
 import '../src/utils/functions_utils.dart';
 
 class KApi {
-  String KApiUrl = _kApiStrings("KApiUrl");
-  String KApiLogin = _kApiStrings("KApiLogin");
+  String KApiUrl = _kApiStrings(key: "KApiUrl");
+  String KApiLogin = _kApiStrings(key: "KApiLogin");
 }
 
-String _kApiStrings(String key) {
+String _kApiStrings({required String key}) {
   return jsonDecode(
       convertToJsonStringQuotes(raw: const String.fromEnvironment('api')))[key];
 }
