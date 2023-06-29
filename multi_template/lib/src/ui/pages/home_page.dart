@@ -1,13 +1,13 @@
 // Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:multi_template/values/k_api.dart';
-import 'package:multi_template/values/k_icons.dart';
 
 // Package imports:
 import 'package:mvc_pattern/mvc_pattern.dart';
 
 // Project imports:
+import '../../../values/k_api.dart';
 import '../../../values/k_colors.dart';
+import '../../../values/k_icons.dart';
 import '../../managers/translate_manager.dart';
 import '../../utils/page_args.dart';
 import '../page_controllers/home_page_controller.dart';

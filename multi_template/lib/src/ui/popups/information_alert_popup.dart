@@ -1,8 +1,8 @@
 // Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:multi_template/values/k_colors.dart';
 
 // Project imports:
+import '../../../values/k_colors.dart';
 import '/src/utils/extensions.dart';
 import '/values/k_values.dart';
 

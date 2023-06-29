@@ -33,9 +33,11 @@ dev_dependencies:
   # Run: dart run package_rename
   package_rename:
     path: packages-dart/package_rename
-  flutter_lints: ^2.0.1
+  # Run : dart run flutter_native_splash:create
+  flutter_native_splash: ^2.3.1
   # Run: dart run import_sorter:main
   import_sorter: ^4.6.0
+  flutter_lints: ^2.0.1
   flutter_test:
     sdk: flutter
 
@@ -57,3 +59,23 @@ flutter:
           weight: 500
         - asset: fonts/Roboto-Bold.ttf
           weight: 700
+
+flutter_native_splash:
+  image: images/dash.png
+  #Uno a la vez
+  # color: "#42a5f5"
+  background_image: "images/splash/background.png"
+  web: false
+  #branding: assets/dart.png # Icono de la marca, va debajo
+  #fullscreen: true # Si mostrar o no la barra de notificaciones
+
+  android_12:
+    # icon_background_color: "#FFFFFF"
+    image: images/app_icon/icon_transparent_background.png
+    # color: "#42a5f5"
+    #branding: assets/dart.png
+
+
+  
+  
+
