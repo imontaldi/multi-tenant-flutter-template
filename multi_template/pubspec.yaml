@@ -33,7 +33,7 @@ dev_dependencies:
   # Run: dart run package_rename
   package_rename:
     path: packages-dart/package_rename
-  # Run : dart run flutter_native_splash:create
+  # Run: dart run flutter_native_splash:create
   flutter_native_splash: ^2.3.1
   # Run: dart run import_sorter:main
   import_sorter: ^4.6.0
