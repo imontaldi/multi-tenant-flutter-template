@@ -5,11 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:mvc_pattern/mvc_pattern.dart';
 
 // Project imports:
-import '../../../values/k_api.dart';
-import '../../../values/k_colors.dart';
-import '../../../values/k_icons.dart';
-import '../../../values/k_strings.dart';
-import '../../managers/translate_manager.dart';
 import '../../utils/page_args.dart';
 import '../page_controllers/home_page_controller.dart';
 
@@ -39,37 +34,7 @@ class HomePagePageState extends StateMVC<HomePage> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text(
-                TranslateManager().texts().test,
-                style: const TextStyle(color: Colors.black),
-              ),
-              Text(
-                "Prueba",
-                style: TextStyle(
-                  color: KColors.KPrimary,
-                ),
-              ),
-              Text(
-                KApi.KApiUrl,
-              ),
-              Text(
-                KApi.KApiLogin,
-              ),
-              Image.asset(
-                KIcons.KIconEnrollmentType,
-                height: 20,
-              ),
-              Text(
-                KStrings.KEnrollmentName,
-              )
-            ],
-          ),
-        ),
+        body: Container(),
       ),
     );
   }

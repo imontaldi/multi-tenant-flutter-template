@@ -44,6 +44,15 @@ class PageManager {
     }
   }
 
+  goBack({PageArgs? args, PageNames? specificPage}) {
+    if (specificPage != null) {
+      navigatorKey.currentState!
+          .popAndPushNamed(specificPage.toString(), arguments: args);
+    } else {
+      Navigator.pop(navigatorKey.currentState!.overlay!.context, args);
+    }
+  }
+
   _goPage(String pageName,
       {PageArgs? args,
       Function(PageArgs args)? actionBack,
@@ -59,5 +68,9 @@ class PageManager {
           pageName, (route) => false,
           arguments: args);
     }
+  }
+
+  goHomePage({PageArgs? args}) {
+    _goPage(PageNames.home.toString(), args: args, makeRootPage: true);
   }
 }
