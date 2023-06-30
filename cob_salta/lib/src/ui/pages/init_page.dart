@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:animated_splash_screen/animated_splash_screen.dart';
-import 'package:multi_template/values/k_icons.dart';
 import 'package:mvc_pattern/mvc_pattern.dart';
 import 'package:page_transition/page_transition.dart';
 
 // Project imports:
 import '../../../values/k_colors.dart';
+import '../../../values/k_icons.dart';
 import '../../utils/page_args.dart';
 import '../page_controllers/init_page_controller.dart';
 
