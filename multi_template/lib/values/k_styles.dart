@@ -23,7 +23,7 @@ centerContainerShadow() => const BoxShadow(
     offset: Offset(0, 0));
 
 topContainerOrangeShadow() => BoxShadow(
-      color: KColors().KPrimary,
+      color: KColors.KPrimary,
       spreadRadius: -5,
       blurRadius: 5,
       offset: const Offset(0, 4),

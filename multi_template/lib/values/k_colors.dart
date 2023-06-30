@@ -2,52 +2,34 @@
 
 import 'dart:convert';
 
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 
 import '../src/utils/functions_utils.dart';
 
 class KColors {
-  Color KPrimary = _kColors(key: "KPrimary");
-  Color KPrimary_T1 = _kColors(key: "KPrimary_T1");
-  Color KPrimary_D1 = _kColors(key: "KPrimary_D1");
-  Color KPrimary_L1 = _kColors(key: "KPrimary_L1");
-  Color KPrimary_L2 = _kColors(key: "KPrimary_L2");
-  Color KPrimary_L3 = _kColors(key: "KPrimary_L3");
-  Color KPrimary_L4 = _kColors(key: "KPrimary_L4");
-  Color KPrimary_L5 = _kColors(key: "KPrimary_L5");
+  static Color KPrimary = _kColors(key: "KPrimary");
 
-  Color KRed = _kColors(key: "KRed");
-  Color KRedL1 = _kColors(key: "KRedL1");
+  static Color KRed = const Color(0xFFF34961);
+  static Color KGreen = const Color(0xFF05CE81);
+  static Color KYellow = const Color(0xFFFFAA00);
+  static Color KBlue = const Color(0xFF5D6CFB);
 
-  Color KSecondary = _kColors(key: "KSecondary");
-  Color KGray_T3 = _kColors(key: "KGray_T3");
-  Color KGray_T2 = _kColors(key: "KGray_T2");
-  Color KGray_T1 = _kColors(key: "KGray_T1");
+  static Color KTextGray = const Color(0xFF707070);
+  static Color KTextGray_L1 = const Color(0xFF9E9E9E);
+  static Color KBackground = const Color(0xFFF3F3F3);
 
-  Color KGray = _kColors(key: "KGray");
-  Color KGray_L1 = _kColors(key: "KGray_L1");
-  Color KGray_L2 = _kColors(key: "KGray_L2");
-  Color KGray_L3 = _kColors(key: "KGray_L3");
-  Color KGray_L4 = _kColors(key: "KGray_L4");
-  Color KGray_L5 = _kColors(key: "KGray_L5");
-  Color KGray_L6 = _kColors(key: "KGray_L6");
-  Color KGray_L7 = _kColors(key: "KGray_L7");
-  Color KGray_L8 = _kColors(key: "KGray_L8");
-  Color KGreen = _kColors(key: "KGreen");
-
-  Color KBlue = _kColors(key: "KBlue");
-
-  Color KYellow = _kColors(key: "KYellow");
-
-  Color KWhite = _kColors(key: "KWhite");
-
-  Color KOrange = _kColors(key: "KOrange");
-  Color KOrange_L1 = _kColors(key: "KOrange_L1");
-  Color KBlack_L2 = _kColors(key: "KBlack_L2");
-  Color KBlack_L1 = _kColors(key: "KBlack_L1");
-
-  Color KBlack_T1 = _kColors(key: "KBlack_T1");
-  Color KBlack = _kColors(key: "KBlack");
+  static Color KBlack = const Color(0xFF000000);
+  static Color KGray_T4 = const Color(0xFF333333);
+  static Color KGray_T3 = const Color(0x4D666666);
+  static Color KGray_T2 = const Color(0xFF656565);
+  static Color KGray_T1 = const Color(0xFF707070);
+  static Color KGray = const Color(0xFF666666);
+  static Color KGray_L1 = const Color(0xFFACACAC);
+  static Color KGray_L2 = const Color(0xFFC4C4C4);
+  static Color KGray_L3 = const Color(0xFFE4E4E4);
+  static Color KGray_L4 = const Color(0xFFF5F5F5);
+  static Color KWhite = const Color(0xFFFFFFFF);
+  static Color KTransparent = Colors.transparent;
 }
 
 Color _kColors({required String key}) {

@@ -7,6 +7,7 @@ import 'package:mvc_pattern/mvc_pattern.dart';
 import 'package:page_transition/page_transition.dart';
 
 // Project imports:
+import '../../../values/k_colors.dart';
 import '../../utils/page_args.dart';
 import '../page_controllers/init_page_controller.dart';
 
@@ -39,7 +40,7 @@ class InitPageState extends StateMVC<InitPage> {
             return _con.goInitialPage();
           },
           animationDuration: const Duration(milliseconds: 1000),
-          backgroundColor: const Color(0xFFFFFFFF),
+          backgroundColor: KColors.KBackground,
           splashTransition: SplashTransition.fadeTransition,
           pageTransitionType: PageTransitionType.fade,
           curve: Curves.linear,
@@ -52,7 +53,6 @@ class InitPageState extends StateMVC<InitPage> {
   }
 
   _content() {
-    //TO IMPLEMENT: splash body
     return const FlutterLogo(
       size: 100,
     );

@@ -54,8 +54,8 @@ class LoadingPopup {
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
           colors: [
-            KColors().KPrimary.withOpacity(0.5),
-            KColors().KPrimary.withOpacity(0.5)
+            KColors.KPrimary.withOpacity(0.5),
+            KColors.KPrimary.withOpacity(0.5)
           ],
         ),
       ),

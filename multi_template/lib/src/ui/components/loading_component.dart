@@ -100,7 +100,7 @@ Widget loadingComponent(bool isVisible,
       color: Colors.transparent,
       alignment: Alignment.center,
       child: LoadingComponent(
-        color: color ?? KColors().KPrimary,
+        color: color ?? KColors.KPrimary,
         size: size,
       ),
     ),

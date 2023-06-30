@@ -61,19 +61,10 @@ flutter:
           weight: 700
 
 flutter_native_splash:
-  image: images/dash.png
-  #Uno a la vez
-  # color: "#42a5f5"
-  background_image: "images/splash/background.png"
+  color: "#F3F3F3"
   web: false
-  #branding: assets/dart.png # Icono de la marca, va debajo
-  #fullscreen: true # Si mostrar o no la barra de notificaciones
-
   android_12:
-    # icon_background_color: "#FFFFFF"
-    image: images/app_icon/icon_transparent_background.png
-    # color: "#42a5f5"
-    #branding: assets/dart.png
+    color: "#F3F3F3"
 
 
   

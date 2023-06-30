@@ -146,7 +146,7 @@ class InformationAlertPopup {
           textAlign: TextAlign.center,
           style: titleStyle ??
               TextStyle(
-                color: KColors().KBlack_T1,
+                color: KColors.KGray_T3,
                 fontWeight: FontWeight.w700,
                 fontSize: KFontSizeXLarge45,
               ),
@@ -163,7 +163,7 @@ class InformationAlertPopup {
             softWrap: true,
             style: subtitle1Style ??
                 TextStyle(
-                  color: KColors().KGray,
+                  color: KColors.KGray,
                   fontWeight: FontWeight.w400,
                   fontSize: KFontSizeMedium35,
                 ),
@@ -180,7 +180,7 @@ class InformationAlertPopup {
           softWrap: true,
           style: subtitle2Style ??
               TextStyle(
-                color: KColors().KGray,
+                color: KColors.KGray,
                 fontWeight: FontWeight.w400,
                 fontSize: KFontSizeMedium35,
               ),
@@ -196,7 +196,7 @@ class InformationAlertPopup {
           softWrap: true,
           style: subtitle3Style ??
               TextStyle(
-                color: KColors().KGray,
+                color: KColors.KGray,
                 fontWeight: FontWeight.w400,
                 fontSize: KFontSizeMedium35,
               ),
@@ -212,7 +212,7 @@ class InformationAlertPopup {
           softWrap: true,
           style: footerTextStyle ??
               TextStyle(
-                color: KColors().KGray,
+                color: KColors.KGray,
                 fontWeight: FontWeight.w400,
                 fontSize: KFontSizeMedium35,
               ),
@@ -252,7 +252,7 @@ class InformationAlertPopup {
                 "images/icon_close.png",
                 fit: BoxFit.cover,
                 alignment: Alignment.center,
-                color: KColors().KPrimary,
+                color: KColors.KPrimary,
                 height: 20,
               ),
             ),
@@ -278,7 +278,7 @@ class InformationAlertPopup {
           },
           style: TextButton.styleFrom(
             padding: const EdgeInsets.all(0),
-            backgroundColor: KColors().KPrimary,
+            backgroundColor: KColors.KPrimary,
             textStyle: const TextStyle(fontSize: 20),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20),
@@ -338,7 +338,7 @@ class InformationAlertPopup {
                   labelButtonCancel ?? "",
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    color: KColors().KPrimary,
+                    color: KColors.KPrimary,
                     fontWeight: FontWeight.bold,
                     fontSize: KFontSizeMedium35,
                   ),

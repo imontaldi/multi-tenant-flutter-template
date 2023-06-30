@@ -5,7 +5,7 @@ import 'dart:convert';
 import '../src/utils/functions_utils.dart';
 
 class KIcons {
-  String KIconExamplePath = _kIconsPaths(key: "KIconExamplePath");
+  static String KIconEnrollmentType = _kIconsPaths(key: "KIconEnrollmentType");
 }
 
 String _kIconsPaths({required String key}) {
