@@ -1,8 +1,8 @@
 {
-    "proyectName": "multi_template",
-    "appName": "Multi Tenant Template",
-    "packageName": "com.siltium.multiTemplate",
-    "bundleName": "multi_template",
+    "proyectName": "cob_salta",
+    "appName": "COB Salta",
+    "packageName": "com.siltium.cobSalta",
+    "bundleName": "cob_salta",
     "appIcon_image": "images/app_icon/icon.png",
     "api": {
         "KApiUrl": "https://api.someproject.staging.siltium.com/api/"
@@ -11,6 +11,7 @@
         "KPrimary": "#2D803B"
     },
     "icons": {
+        "KIconSplashIcon": "images/splash/icon.png",
         "KIconEnrollmentType": "images/icon_appbar_enrollment_type.png"
     },
     "strings": {

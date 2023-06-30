@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:animated_splash_screen/animated_splash_screen.dart';
+import 'package:multi_template/values/k_icons.dart';
 import 'package:mvc_pattern/mvc_pattern.dart';
 import 'package:page_transition/page_transition.dart';
 
@@ -53,8 +54,10 @@ class InitPageState extends StateMVC<InitPage> {
   }
 
   _content() {
-    return const FlutterLogo(
-      size: 100,
+    return Image.asset(
+      KIcons.KIconSplashIcon,
+      height: 200,
+      width: 200,
     );
   }
 }

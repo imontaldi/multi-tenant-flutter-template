@@ -1,4 +1,4 @@
-package com.siltium.multiTemplate
+package com.siltium.cobSalta
 
 import io.flutter.embedding.android.FlutterActivity
 
