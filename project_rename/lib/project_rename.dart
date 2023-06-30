@@ -33,9 +33,6 @@ void projectRename() {
       originalPubspecContent.indexOf(":") + 2,
       originalPubspecContent.indexOf("\n"));
 
-  // print(targetDirectory.path);
-  // print(configJson['proyectName'].toString());
-
   try {
     //Se sobreescribe el nombre del proyecto en pubspec.yaml
     pubspec.writeAsStringSync(
